@@ -9,6 +9,11 @@ const sequelize = new Sequelize(
         host: 'locaalhost',
         dialect: 'mysql',
         port: 3006,
+    },
+    {
+        sequelize,
+        timestamps: true,
+        underscored: true
     }
 );
 
