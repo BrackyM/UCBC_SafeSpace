@@ -53,30 +53,31 @@
 //   });
 
 const express = require('express');
+const path = require ('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
-const dataBase = require('./db/data.json')
+const dataBase = require('./db/data.json');
+const sequelize = require('./config/connection');
+
+const routes = require('./controllers')
 
 // Setting up express application
 const PORT = process.env.PORT || 3001;
-const app = express()
+const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-var path = require ('path');
 app.use(express.static(path.join(__dirname + 'public')));
 
 // Setting Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars')
 
-app.get('/', (req, res) => {
-  res.render('home', {dataBase});
-});
+app.use(routes)
 
-app.listen(PORT, () => {
-  console.log(`Page available at: ${PORT}`);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });

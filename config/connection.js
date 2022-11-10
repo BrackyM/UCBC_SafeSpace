@@ -6,12 +6,11 @@ const sequelize = new Sequelize(
     process.env.DB_USER,
     process.env.DB_PASS,
     {
-        host: 'locaalhost',
+        host: 'localhost',
         dialect: 'mysql',
-        port: 3006,
+        port: 3306,
     },
     {
-        sequelize,
         timestamps: true,
         underscored: true
     }
