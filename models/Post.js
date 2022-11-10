@@ -9,10 +9,11 @@ class Post extends Model {
 
 Post.init(
     {
-       post_id: {
+       id: {
         type: DataTypes.INTEGER,
+        primaryKey: true,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id'
         },
        },
@@ -21,7 +22,7 @@ Post.init(
         allowNull: false,
        },
        votes: {
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: true,
        },
        post_links: {
@@ -34,7 +35,7 @@ Post.init(
         sequelize,
         timestamps: true,
         underscored: true,
-        modelName: 'post',
+        modelName: 'Post',
     }
 )
 

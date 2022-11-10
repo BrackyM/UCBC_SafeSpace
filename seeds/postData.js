@@ -8,13 +8,13 @@ const postData = [
     },
     {
         post_body: 'I hate safe space!',
-        votes: 'April 20, 2021 07:00:00',
-        post_links: 'June 21, 2021 17:00:00',
+        votes: '11',
+        post_links: 'https://www.youtube.com/watch?v=eZTS4cL4Euo',
     },
     {
         post_body: 'Printemps',
-        votes: 'April 20, 2021 07:00:00',
-        post_links: 'June 21, 2021 17:00:00',
+        votes: '33',
+        post_links: 'https://www.youtube.com/watch?v=eZTS4cL4Euo',
     },
   ];
 
