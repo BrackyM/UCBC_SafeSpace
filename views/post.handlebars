@@ -1,19 +1,83 @@
-<div class="posts">
-    <div class="row justify-content-center">
-        <div class="col-lg-8" style="margin-top: 50px;">
-            <div class="card">
-
-                <img src="{{testData.post.image}}"
-                    class="img-thumbnail w-50" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Posted by {{testData.post.author}}</h5>
-
-                    <ul class="list-group">
-                        <li class="list-group-item">This is supposed to be a comment</li>
-                        <li class="list-group-item">This is supposed to be a comment</li>
-                    </ul>
-                </div>
-            </div>
+<div class="container mt-5 rounded-lg">
+  <div class="card rounded-lg">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="/assets/safe-space.png" class="img-fluid" alt="" />
+      </div>
+      <div class="card-content col-md-8">
+        <div class="user-identity user-img">
+          <img src="/assets/safe-space.png" class="img-fluid user-img" alt="" />
+          <h5 class="card-title mt-2">{{testData.post.author}}</h5>
         </div>
+        <p>{{testData.post.description}}
+        </p>
+        <div class="button-options">
+          <button type="button" class="btn-group btn-upvote btn btn-success"><i
+              class="fa-solid fa-circle-arrow-up"
+            > 0</i></button>
+          <button type="button" class="btn-group btn-downvote btn btn-danger"><i
+              class="fa-solid fa-circle-down"
+            > 0</i></button>
+          <button
+            type="button"
+            class="btn-group btn-delete btn btn-secondary"
+          ><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>
     </div>
+    <div class="card-footer text-muted">
+
+      <div class="container p-0">
+        <div class="card-header user-img">
+          <div class="user-identity user-img">
+            <img src="/assets/goose.jpg" class="img-fluid user-img" alt="" />
+            <h5 class="card-title mt-2"> Sky Texier</h5>
+          </div>
+
+          <div class="card-content comment-content">
+            <div class="card rounded">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam ac hendrerit quam. Morbi elit dolor, aliquet sit
+                    amet pellentesque sed, congue quis erat. Curabitur sit amet
+                    scelerisque elit. Proin pellentesque erat quis tincidunt
+                    vestibulum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="button-options">
+              <button
+                type="button"
+                class="btn-group btn-upvote btn btn-success"
+              ><i class="fa-solid fa-circle-arrow-up"> 0</i></button>
+              <button
+                type="button"
+                class="btn-group btn-downvote btn btn-danger"
+              ><i class="fa-solid fa-circle-down"> 0</i></button>
+              <button
+                type="button"
+                class="btn-group btn-delete btn btn-secondary"
+              ><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2 col-md-10"
+          type="text"
+          placeholder="Write a Comment"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-success col-md-1 my-2 my-sm-0 comment-btn"
+          type="submit"
+        >Submit</button>
+      </form>
+
+    </div>
+  </div>
 </div>
