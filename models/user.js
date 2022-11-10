@@ -1,7 +1,11 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+class User extends Model {
+  // static associate({Post}) {
+  //   this.hasMany(Post, {foreignKey: 'userId', as: 'posts'})
+  // }
+}
 
 User.init(
     {
@@ -30,8 +34,7 @@ User.init(
     },
     {
       sequelize,
-      timestamps: false,
-      freezeTableName: true,
+      timestamps: true,
       underscored: true,
       modelName: 'user',
     }
