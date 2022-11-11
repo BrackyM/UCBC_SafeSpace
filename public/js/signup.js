@@ -17,6 +17,7 @@ $(document).ready(function () {
     }
 
     signUpUser(userData.username, userData.email, userData.password);
+    usernameInput.val("");
     emailInput.val("");
     passwordInput.val("");
   });
