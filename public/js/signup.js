@@ -1,11 +1,13 @@
 $(document).ready(function () {
   var signUpForm = $("form.signup");
+  var usernameInput = $("input#username-input");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
   signUpForm.on("submit", function (event) {
     event.preventDefault();
     var userData = {
+      username: usernameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
     };
