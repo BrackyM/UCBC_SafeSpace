@@ -45,3 +45,7 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+.video {
+    break-inside: avoid;
+}

@@ -1,15 +1,21 @@
-const testData = require('../../db/data.json')
+const testData = require('../../db/data.json');
+const { User } = require('../../models');
 const router = require('express').Router();
 
-router.get("/", async (req, res) => {
+router.get("/:username", async (req, res) => {
     try {
-        res.render('post', {testData});
+        let userName = req.params;
+        console.log(userName)
+        const userData = await User.findAll({where: userName})
+        const userInfo = userData.map((info) => info.get({ plain: true}));
+        console.log(userInfo)
+        console.log({userInfo})
+
+        res.render('allposts', {userInfo});
     } catch (err){
         console.log(err);
         res.status(500).json(err);
     }
 })
-
-module.exports = router;
 
 module.exports = router;

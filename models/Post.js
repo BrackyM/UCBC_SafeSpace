@@ -11,11 +11,9 @@ Post.init(
     {
        id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
-        references: {
-            model: 'User',
-            key: 'id'
-        },
+        autoIncrement: true,
        },
        post_body: {
         type: DataTypes.CHAR(250),
@@ -28,6 +26,13 @@ Post.init(
        post_links: {
         type: DataTypes.STRING,
         allowNull: true,
+       },
+       user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'users',
+            key: 'id'
+        }
        }
        
     },
@@ -35,7 +40,7 @@ Post.init(
         sequelize,
         timestamps: true,
         underscored: true,
-        modelName: 'Post',
+        modelName: 'post',
     }
 )
 

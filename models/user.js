@@ -17,6 +17,11 @@ User.init(
       },
       username: {
         type: DataTypes.STRING,
+        primaryKey: true,
+        allowNull: false,
+      },
+      user_avatar: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       email: {
@@ -36,7 +41,7 @@ User.init(
       sequelize,
       timestamps: true,
       underscored: true,
-      modelName: 'User',
+      modelName: 'user',
     }
   );
   

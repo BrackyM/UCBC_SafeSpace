@@ -1,0 +1,16 @@
+<div class="container rounded-lg">
+    <div class="card rounded-lg">
+    {{#each userHome as |user|}}
+    {{> post}}
+    <div class="container card-footer comment-container">
+<div class="card-footer user-img">      
+    {{> comment}} 
+</div>
+    {{> writecomment}}
+    </div>
+    </div>
+    
+    <div>
+    {{/each}}
+    </div>
+</div>
