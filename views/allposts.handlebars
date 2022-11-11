@@ -1,9 +1,9 @@
 <div class="container rounded-lg">
-    <div class="card rounded-lg">
+    
     {{#each userHome as |user|}}
     {{> post}}
-    <div class="container card-footer comment-container">
-<div class="card-footer user-img">      
+    <div class="container card-footer mb-0  comment-container border-dark bg-secondary">
+<div class="card-footer bg-dark user-img">      
     {{> comment}} 
 </div>
     {{> writecomment}}

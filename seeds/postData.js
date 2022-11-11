@@ -10,7 +10,7 @@ const postData = [
     {
         post_body: 'I hate safe space!',
         votes: '11',
-        post_links: 'https://www.youtube.com/watch?v=eZTS4cL4Euo',
+        post_links: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fanimal%2Fgoat&psig=AOvVaw1fNAsUdNz3hsGyxSbr42sY&ust=1668273621816000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNDn9M7RpvsCFQAAAAAdAAAAABAL',
         user_id: 1,
     },
     {

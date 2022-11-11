@@ -1,3 +1,7 @@
+body{
+    background-color: slategray;
+}
+
 .btn-group{
     margin: .25rem;
 }
@@ -46,6 +50,3 @@
     justify-content: space-around;
 }
 
-.video {
-    break-inside: avoid;
-}
