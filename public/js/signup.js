@@ -12,17 +12,18 @@ $(document).ready(function () {
       password: passwordInput.val().trim(),
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.username || !userData.email || !userData.password) {
       return;
     }
 
-    signUpUser(userData.email, userData.password);
+    signUpUser(userData.username, userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
-  function signUpUser(email, password) {
+  function signUpUser(username, email, password) {
     $.post("/api/signup", {
+      username: username,
       email: email,
       password: password,
     })
