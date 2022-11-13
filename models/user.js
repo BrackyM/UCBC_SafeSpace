@@ -22,7 +22,7 @@ User.init(
       },
       user_avatar: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       email: {
         type: DataTypes.STRING,
