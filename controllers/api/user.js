@@ -3,22 +3,38 @@ const { User, Post } = require('../../models');
 const router = require('express').Router();
 
 router.get("/:username", async (req, res) => {
+    let name = req.params
     try {
-        let userName = req.params;
-        console.log(userName)
-        const userData = await User.findAll({
-            where: userName,
+        //Get all posts
+        const dbPostData = await Post.findAll({
             include: [
                 {
-                    model: Post,
-                }
-            ]
-        })
-        const userInfo = userData.map((info) => info.get({ plain: true}));
-        console.log(userInfo)
-        console.log({userInfo})
+                    model: User,
+                    where: User.username = name,
+                },
+            ],
 
-        res.render('allposts', {userInfo});
+        });
+        const userHome = dbPostData.map((info) => info.get({ plain: true}));
+        console.log(userHome);
+        res.render('allposts', {userHome});
+    
+    // try {
+    //     let userName = req.params;
+    //     console.log(userName)
+    //     const userData = await User.findAll({
+    //         where: userName,
+    //         include: [
+    //             {
+    //                 model: Post,
+    //             }
+    //         ]
+    //     })
+    //     const userInfo = userData.map((info) => info.get({ plain: true}));  
+    //     const userPosts = userInfo[0].posts 
+    //     console.log({userInfo, userPosts})
+
+    //     res.render('userpage', {userInfo, userPosts});
     } catch (err){
         console.log(err);
         res.status(500).json(err);

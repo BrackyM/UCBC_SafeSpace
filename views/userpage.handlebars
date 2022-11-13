@@ -1,7 +1,7 @@
+<h1>{{username}}</h1>
 <div class="container rounded-lg">
-    
-    {{#each userHome}}
-    {{> post}}
+    {{#each userPosts}}
+    {{> userpageposts}} 
     <div class="container card-footer mb-0  comment-container border-dark bg-secondary">
 <div class="card-footer bg-dark user-img">      
     {{> comment}} 
