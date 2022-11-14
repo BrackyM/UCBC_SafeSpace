@@ -1,6 +1,7 @@
 const testData = require('../../db/data.json');
 const { User, Post } = require('../../models');
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 
 router.get("/", async (req, res) => {
     res.render('signup');
@@ -12,8 +13,9 @@ router.post("/", async (req, res) => {
         const dbUserData = await User.create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: await bcrypt.hash(req.body.password, 10)
         });
+        console.log(dbUserData)
         res.status(200).json(dbUserData)
     } catch (err) {
         console.log(err);

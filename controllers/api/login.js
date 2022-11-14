@@ -1,25 +1,30 @@
 const testData = require('../../db/data.json');
 const { User, Post } = require('../../models');
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 
-router.get("/", async (req, res) => {
-    let name = req.params
+router.get('/', async (req, res) => {
+    res.render('login');
+});
+
+router.post('/', async (req, res) => {
     try {
-        //Get all posts
-        const dbPostData = await Post.findAll({
-            include: [
-                {
-                    model: User,
-                    where: User.username = name,
-                },
-            ],
+        const userData = await User.findOne({where: {email: req.body.email}});
+        if (!userData) {
+            res.status(404).json({ message: 'Email cannot be found!'});
+            return
+        }
+        const validatePass = await bcrypt.compare(
+            req.body.password,
+            userData.password
+        );
+        if (!validatePass){
+            res.status(404).json({ message: 'Password incorrect!'});
+            return
+        }
 
-        });
-        const userHome = dbPostData.map((info) => info.get({ plain: true}));
-        console.log(userHome);
-        res.render('login', {userHome});
-    } catch (err){
-        console.log(err);
+        res.status(200).json({ message: 'Logged in!'})
+    } catch (err) {
         res.status(500).json(err);
     }
 })
