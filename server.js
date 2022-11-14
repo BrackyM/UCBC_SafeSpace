@@ -54,22 +54,42 @@
 
 const express = require('express');
 const path = require ('path');
-const session = require('express-session');
+
+//Handlebars Setup / testing database routes
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const dataBase = require('./db/data.json');
-const sequelize = require('./config/connection');
 
-const routes = require('./controllers')
+//Sequelize / Session setup
+const session = require('express-session');
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: 'This space is safe',
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000,
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
 // Setting up express application
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(session(sess));
+
+
+//Routing
+const routes = require('./controllers')
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.static(__dirname + '/public'));
 

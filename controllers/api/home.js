@@ -13,8 +13,8 @@ router.get("/", async (req, res) => {
             ],
         });
         const userHome = dbPostData.map((info) => info.get({ plain: true}));
-        console.log(userHome);
-        res.render('allposts', {userHome});
+        console.log({userHome , loggedIn: req.session.loggedIn});
+        res.render('allposts', {userHome , loggedIn: req.session.loggedIn});
     } catch (err){
         console.log(err);
         res.status(500).json(err);

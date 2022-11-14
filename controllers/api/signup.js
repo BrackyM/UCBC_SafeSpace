@@ -15,6 +15,11 @@ router.post("/", async (req, res) => {
             email: req.body.email,
             password: await bcrypt.hash(req.body.password, 10)
         });
+        req.session.save(() => {
+            req.session.loggedIn = true;
+      
+            res.status(200).json(dbUserData);
+          });
         console.log(dbUserData)
         res.status(200).json(dbUserData)
     } catch (err) {

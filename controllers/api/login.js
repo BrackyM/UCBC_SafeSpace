@@ -22,8 +22,11 @@ router.post('/', async (req, res) => {
             res.status(404).json({ message: 'Password incorrect!'});
             return
         }
-
-        res.status(200).json({ message: 'Logged in!'})
+        req.session.save(() => {
+            req.session.loggedIn = true;
+            console.log(req.session.cookie);
+            res.status(200).json({ message: 'Logged in!'})
+        });
     } catch (err) {
         res.status(500).json(err);
     }

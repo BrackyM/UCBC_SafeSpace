@@ -1,6 +1,3 @@
-body{
-    background-color: slategray;
-}
 
 .btn-group{
     margin: .25rem;
@@ -50,3 +47,6 @@ body{
     justify-content: space-around;
 }
 
+.comment-input {
+    display: flex;
+}
