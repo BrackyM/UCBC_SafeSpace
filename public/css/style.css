@@ -50,3 +50,8 @@
 .comment-input {
     display: flex;
 }
+
+.bg-warning {
+    background-color: white;
+    opacity: 50%;
+}
