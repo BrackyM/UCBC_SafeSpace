@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.findOne({where: {email: req.body.email}});
+        const userData = await Post.create({});
         if (!userData) {
             res.status(404).json({ message: 'Email cannot be found!'});
             return

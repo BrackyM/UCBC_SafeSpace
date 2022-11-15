@@ -12,7 +12,7 @@
 </head>
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark bg-info mb-3 p-1">
     <img src="https://cdn-icons-png.flaticon.com/512/3026/3026431.png" width="50" height="50" alt="safe space icon">
-  <a class="navbar-brand m-1 h1" href="#">The Safe Space</a>
+  <a class="navbar-brand m-1 h1" href="/">The Safe Space</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -71,13 +71,20 @@
     </form>
   </div>
 </nav>
-    <div class="container">
-      <div class="d-flex justify-content-center container m-2">
+<div class="container">
+{{#if loggedIn}}
+      <div class="d-flex justify-content-between container mb-2">
+        <a class="nav-link" href="/user/{{user.username}}">
+        <button type="button" class="btn btn-lg btn-primary"> Hello {{user.username}} !</button>
+        </a>
         <a class="nav-link" href="/post">
         <button type="button" class="btn btn-secondary btn-lg">Make a post!</button>
         </a>
       </div>
-
+  {{else}}
+<h4>Login to post!</h4>
+{{/if}}
+</div>
 <body>
         {{{body}}}
     </div>
