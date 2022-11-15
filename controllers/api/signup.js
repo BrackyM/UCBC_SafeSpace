@@ -4,7 +4,7 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 
 router.get("/", async (req, res) => {
-    res.render('signup');
+    res.render('signup', {loggedIn: req.session.loggedIn, user: req.session.body});
 })
 
 //Create new user

@@ -1,0 +1,14 @@
+<div class="container">
+{{#if loggedIn}}
+      <div class="d-flex justify-content-between container mb-2">
+
+        <button type="button" class="btn btn-lg btn-primary"> Hello {{user.username}} !</button>
+        </a>
+        <a class="nav-link" href="/post">
+        <button type="button" class="btn btn-secondary btn-lg">Make a post!</button>
+        </a>
+      </div>
+  {{else}}
+<h4>Login to post!</h4>
+{{/if}}
+</div>

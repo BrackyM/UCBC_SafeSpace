@@ -1,6 +1,6 @@
 
 <div class="card rounded-lg mb-4">
-  <div class="card-header border-primary user-identity user-img mb-10">
+  <div class="card-header border-light user-identity user-img mb-10">
           <img src="{{user.user_avatar}}" class="img-fluid user-img" alt="" />
           <h5 class="mt-2">{{user.username}}</h5>
         </div>
@@ -22,13 +22,18 @@
         <div class="button-options">
           <button type="button" class="btn-group btn-upvote-comment btn btn-outline-success"><i
               class="fa-solid fa-circle-arrow-up"
-            > {{votes}}</i></button>
+            > </i></button>
+              <button
+            type="button"
+            class="btn-group  btn btn-outline disabled"
+          >{{votes}}</button>
           <button type="button" class="btn-group btn-downvote-comment btn btn-outline-danger"><i
               class="fa-solid fa-circle-down"
-            > 0</i></button>
+            ></i></button>
+          
           <button
             type="button"
-            class="btn-group btn-delete-comment btn btn-outline-light"
+            class="btn-group btn-delete-comment btn btn-outline-dark"
           ><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>
