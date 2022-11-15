@@ -1,1 +1,0 @@
-const submitPost = (event)
