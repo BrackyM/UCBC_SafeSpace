@@ -18,3 +18,15 @@ const searchHandler = async (event) => {
 const btn = document.querySelector(".search");
 
 btn.addEventListener("submit", searchHandler);
+
+//Upvote Handler
+const voteHandler = (event) =>  {
+  event.preventDefault();
+  console.log("This button is working")
+  const thisPost = this.post
+  console.log(thisPost)
+}
+
+const upvoteBtn = document.querySelector("#upvote");
+
+upvoteBtn.addEventListener("click", voteHandler);
