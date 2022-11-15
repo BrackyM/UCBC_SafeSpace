@@ -1,22 +1,23 @@
-const posthandler = async ( event )  => {
-    event.preventDefault();
+const posthandler = async (event) => {
+  event.preventDefault();
 
-const createPost = document.querySelector("#post-input").value.trim();
-const createLink = document.querySelector("#link-input").value.trim();
-console.log({createPost, createLink})
-if (createPost) {
-    const response = await fetch('/createPost', {
-        method: 'POST',
-        body: JSON.stringify({createPost, createLink}),    
-        headers: {'Content-Type': 'application/json'}
+  const createPost = document.querySelector("#post-input").value.trim();
+  const createLink = document.querySelector("#link-input").value.trim();
+  console.log({ createPost, createLink });
+  if (createPost) {
+    const response = await fetch("/createPost", {
+      method: "POST",
+      body: JSON.stringify({ createPost, createLink }),
+      headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed Post.');
-      }
- } };
+      document.location.replace("/");
+    } else {
+      alert("Failed Post.");
+    }
+  }
+};
 
-    const postSubmitBtn = document.querySelector('.post')
+const postSubmitBtn = document.querySelector(".post");
 
-    postSubmitBtn.addEventListener('submit', posthandler);
+postSubmitBtn.addEventListener("submit", posthandler);
