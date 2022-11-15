@@ -11,6 +11,7 @@ router.use('/post', makePost);
 router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
 router.use('/signup', signupRoutes);
+router.use('/createPost', makePost)
 router.use('/', homeRoutes);
 
 module.exports = router;

@@ -7,39 +7,20 @@ router.get('/', async (req, res) => {
     res.render('createPost', {loggedIn: req.session.loggedIn, user: req.session.body});
 });
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const dbNewPost = await Post.create({
-//             userPost: req.body.post,
-//             userLink: req.body.link,
-
-//         });
-//         if (!newPost) {
-//             res.status(404).json({ message: 'Email cannot be found!'});
-//             return
-//         }
-//         req.session.save(() => {
-//             req.session.loggedIn = true;
-//             console.log(req.session.cookie);
-//             res.status(200).json({ message: 'Logged in!'})
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
 router.post("/", async (req, res) => {
+    console.log(req.session.body);
+    console.log(req.session.body.username);
     try {
         const dbPostData = await Post.create({
-            post_body: req.post.body,
-            post_links: req.post.link,
+            post_body: req.body.createPost,
+            post_links: req.body.createLink,
             include: [
                 {
                     model: User,
-                    id: req.session.id,
-                    username: req.session.username,
-                    email: req.session.email,
+                    where: User.username = req.session.body.username,
                 },
             ],
+            user_id: req.session.body.id
         });
        
         console.log(dbPostData)

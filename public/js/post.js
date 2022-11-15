@@ -5,7 +5,7 @@ const createPost = document.querySelector("#post-input").value.trim();
 const createLink = document.querySelector("#link-input").value.trim();
 console.log({createPost, createLink})
 if (createPost) {
-    const response = await fetch ('/createPost', {
+    const response = await fetch('/createPost', {
         method: 'POST',
         body: JSON.stringify({createPost, createLink}),    
         headers: {'Content-Type': 'application/json'}
