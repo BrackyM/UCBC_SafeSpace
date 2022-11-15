@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection');
-
+const moment = require('moment');
 class Post extends Model {
     // static association({User}){
     //     this.belongsTo(User, {foriegnKey: 'userId', as: 'user'})
@@ -33,12 +33,17 @@ Post.init(
             model: 'users',
             key: 'id'
         }
-       }
-       
+       },
+       posted_time: {
+        type: DataTypes.STRING,
+        defaultValue: moment().format('MMMM Do YYYY, h:mm a'),
+        allowNull: true,
+       },
     },
     {
         sequelize,
         timestamps: true,
+        createdAt: true,
         underscored: true,
         modelName: 'post',
     }

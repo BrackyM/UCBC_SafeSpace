@@ -13,6 +13,9 @@ router.get("/:username", async (req, res) => {
           where: (User.username = name),
         },
       ],
+      order: [
+        ['createdAt', 'DESC']
+      ],
     });
     const userHome = dbPostData.map((info) => info.get({ plain: true }));
     console.log(userHome);

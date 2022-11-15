@@ -11,6 +11,9 @@ router.get("/", async (req, res) => {
           model: User,
         },
       ],
+      order: [
+        ['createdAt', 'DESC']
+      ]
     });
     const userHome = dbPostData.map((info) => info.get({ plain: true }));
     console.log({ userHome, loggedIn: req.session.loggedIn });

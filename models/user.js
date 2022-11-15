@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection');
+const moment = require('moment')
 
 class User extends Model {
   // static associate({Post}) {
@@ -50,3 +51,4 @@ User.init(
   
   module.exports = User;
   
+  // defaultValue: moment.utc().format('YYYY-MM-DD HH:mm'),
