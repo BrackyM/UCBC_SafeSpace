@@ -1,8 +1,9 @@
+
 const posthandler = async (event) => {
   event.preventDefault();
 
   const createPost = document.querySelector("#post-input").value.trim();
-  const createLink = document.querySelector("#link-input").value.trim();
+  const createLink = document.querySelector("#video-input").value.trim();
   console.log({ createPost, createLink });
   if (createPost) {
     const response = await fetch("/createPost", {
