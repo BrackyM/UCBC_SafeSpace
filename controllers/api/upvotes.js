@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
         id: req.body.post_id,
       },
     });
-
+// logging up vote 
     const data = dbPostData.map((info) => info.get({ plain: true }));
     console.log(data);
     const updatedPost = data;
