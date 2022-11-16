@@ -1,0 +1,24 @@
+{{#if loggedIn}}
+<div class="card">
+    <div class="col">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Create a Post</h2>
+        <form class="post">
+          <div class="form-group">
+            <label for="inputPost">Post body</label>
+            <input type="post" class="form-control" id="post-input" placeholder="Write your post here">
+          </div>
+          <div class="form-group">
+            <label for="inputLink">Video Links</label>
+            <input type="link" class="form-control" id="video-input" placeholder="Only works for youtube links!">
+          </div>
+          <button type="submit" class="btn btn-light">Submit Post</button>
+        </form>
+        <br />
+    
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="./js/post.js"></script>
+{{else}}
+{{/if}}
