@@ -1,16 +1,17 @@
+// require db, model, express, bycrpt, get-video-id
 const testData = require("../../db/data.json");
 const { User, Post } = require("../../models");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const getVideoId = require('get-video-id');
-
+// request and response for creating post
 router.get("/", async (req, res) => {
   res.render("createPost", {
     loggedIn: req.session.loggedIn,
     user: req.session.body,
   });
 });
-
+// request and response for getting video link
 router.post("/", async (req, res) => {
   const link = getVideoId(req.body.createLink)
   console.log(req.session.body);
@@ -22,6 +23,7 @@ router.post("/", async (req, res) => {
     const dbPostData = await Post.create({
       post_body: req.body.createPost,
       post_links: reqLink.id,
+      post_image: req.body.createImage,
       votes: 0,
       include: [
         {
@@ -31,7 +33,7 @@ router.post("/", async (req, res) => {
       ],
       user_id: req.session.body.id,
     });
-
+// loggin error
     console.log(dbPostData);
     res.status(200).json(dbPostData);
   } catch (err) {
