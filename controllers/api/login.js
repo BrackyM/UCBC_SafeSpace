@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     user: req.session.body,
   });
 });
-
+// reqeust email login.
 router.post("/", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
       res.status(404).json({ message: "Email cannot be found!" });
       return;
     }
+    // validate password
     const validatePass = await bcrypt.compare(
       req.body.password,
       userData.password

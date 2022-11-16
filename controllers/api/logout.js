@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   });
   console.log(req.session);
 });
-
+// request and response to stop session
 router.post("/", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

@@ -11,6 +11,7 @@ router.get("/", async (req, res) => {
 });
 
 //Create new user
+// bcrypt password
 router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -22,6 +23,7 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
     });
+    // log new user and store in db
     console.log(dbUserData);
     res.status(200).json(dbUserData);
   } catch (err) {
