@@ -1,8 +1,14 @@
-// connect to sequelize
+// connect to sequelize / JAWSDB
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
+
 // setup for env file and mysql workbench
-const sequelize = new Sequelize(
+let sequelize;
+
+if (process.env.JAWSDB_URL){
+    sequelize = new Sequelize(process.env.JAWSDB_URL)
+} else {
+sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PASS,
@@ -16,5 +22,6 @@ const sequelize = new Sequelize(
         underscored: true
     }
 );
+}
 
 module.exports = sequelize;
