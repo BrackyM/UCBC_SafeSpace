@@ -5,13 +5,14 @@ const loginRoutes = require('./login');
 const signupRoutes = require('./signup');
 const logoutRoutes = require('./logout');
 const makePost = require('./createPost');
+const upvotes = require('./upvotes');
 
 router.use('/user', userRoutes);
-router.use('/post', makePost);
 router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
 router.use('/signup', signupRoutes);
 router.use('/createPost', makePost)
+router.use('/upvotes', upvotes)
 router.use('/', homeRoutes);
 
 module.exports = router;
