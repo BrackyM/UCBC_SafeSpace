@@ -1,14 +1,33 @@
 # Team 1 | UCBCP2_The Safe Space | README
- Our website is a fun filled blog where users can post anything they want! It could be funny videos or memes of their choice. Not only that users can like and comment on somones post! It's completley free so signup today!
+ `Our website is a fun filled blog where users can post anything they want! It could be funny videos or memes of their choice. Not only that users can like and comment on somones post! It's completley free so signup today!`
 
- Group 3 Members:
+ The languages/technologies used in this project include JavaScript, Sequelize, MySQL, Express, Handlebars, BCrypt and Boostrap.
+
+ The intention behind building this project was to create a unique(ish) app that allows users to create an account, sign in, create posts and upvote posts. We aimed to create an "safe-space" where users could only upvote posts.
+
+ For future development we would like to implement more filters on user posts, allowing users to filter through posts depending on their "type" or category as well as the ability for any user to delete another user's post if it reaches a certain critera of downvotes.
+
+ At the moment we've only implemented searches for specific users, upvotes and so forth. If given more time we'd integrate the delete options and the downvote options as well as user tags. Similarly we'd like to flush out the "attached" links to user posts, allowing them to post any sort of media without a specific URL for videos or images alone.
+
+ The main challenge with this project was time; with little less than two weeks we focused on what would make our application function on a barebones level. In this case that included GET/POST routes, the ability to update posts based on an upvote function and so forth. 
+
+ Group 1 Members:
 
 * Braxton Minkey
 * Sky Texier
 * Ishi Anand
 * Khiem Phung
 
- # Project Requirements 
+## Table of Contents
+- [Project Requirements](#project-requirements)
+- [Usage/Examples](#usage)
+- [Installation process](#installation-process)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
+- [Deployed Project](#deployed-project)
+- [Contributors](#contributors)
+
+ ## Project Requirements 
 
 ```
 Use Node.js and Express.js to create a RESTful API.
@@ -27,9 +46,17 @@ Meet good-quality coding standards (file structure, naming conventions, follows 
 Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
+## Usage
 
-# Installation process
-Project Installation requires the following steps: 
+For a user to post they first need to login, thus if they dont have an account already they will need to create one. Afterwards a user will need to login with said account for their user-card to display. From this card a user can create a post, include images/video links (video links only work with youtube links at the moment!).
+A user can also upvote any post, including their own (planned development to make users only upvote once on their own post and others).
+
+Users can also search for other users with the search bar in the navbar. They need to specify the username to see all posts from said user.
+
+A user cannot delete posts at the moment, however this is another planned feature.
+
+## Installation process
+For local use, this project requires the following steps: 
  * Create a .env file
  * Within your terminal run the command `npm i` to install the necessary packages
  * Use the "schemal.sql" file within your MySql Workbench as a Query
@@ -37,8 +64,10 @@ Project Installation requires the following steps:
  * To start the server run the command `nodemon index.js`
  * Check your local `http://localhost:3001/` page
 
+Otherwise the application is deployed on Heroku and runs of a remote database!
+
  
-# Technologies
+## Technologies
 
 We created this project within the HTML, CSS, and JavaScript languages. We also used moment.js, node.js, and mysql within the confines of the project.
 
