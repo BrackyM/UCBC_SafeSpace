@@ -14,6 +14,6 @@ router.use('/logout', logoutRoutes);
 router.use('/signup', signupRoutes);
 router.use('/createPost', makePost)
 router.use('/upvotes', upvotes)
-router.use('/', homeRoutes);
+router.use('/home', homeRoutes);
 
 module.exports = router;
