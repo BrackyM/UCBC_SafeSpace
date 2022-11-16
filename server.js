@@ -24,7 +24,7 @@ const sess = {
 };
 
 // Setting up express application
-const PORT = process.env.PORT || 300;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(session(sess));
