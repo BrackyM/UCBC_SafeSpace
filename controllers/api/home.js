@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
         ['createdAt', 'DESC']
       ]
     });
+    // getting user info and logging in session 
     const userHome = dbPostData.map((info) => info.get({ plain: true }));
     console.log({ userHome, loggedIn: req.session.loggedIn });
     res.render("allposts", {

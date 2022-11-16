@@ -9,16 +9,17 @@
   
   
   <div class="card-body p-2">
-        <div class="card-content col-auto flex-row flex-wrap justify-content-between">
+    <div class="row">
+        <div class="card-content col flex-row flex-wrap justify-content-between">
       {{#if post_links}}
-<iframe width="250" src="https://www.youtube.com/embed/{{post_links}}" title="Gandalf Sax Guy 10 Hours HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="auto" src="https://www.youtube.com/embed/{{post_links}}" title="{{user.username}} uploaded video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {{/if}}
       {{#if post_image}}
-        <img/>
+        <img src="{{post_image}}" width="250" class="img-thumbnail" alt="{{user.username}} uploaded image"/>
       {{/if}}
-      <p class="pl-2 pr-2 col-5">{{post_body}}
+      <p class="pl-2 pr-2 col">{{post_body}}
       </p>
-      <div class="button-options align-items-center">
+      <div class="col button-options align-items-center">
         <button type="submit" id="downvote" class="btn-group btn btn-outline-light">
           {{votes}}
           </button>
@@ -32,5 +33,6 @@
           </button>
           </form>
       </div>
+    </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
+// connect to sequelize
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
-
+// setup for env file and mysql workbench
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
