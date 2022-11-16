@@ -37,7 +37,6 @@ const routes = require('./controllers')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname + '/public')));
-app.use(express.static(__dirname + '/public'));
 
 // Setting Handlebars
 app.engine('handlebars', hbs.engine);
