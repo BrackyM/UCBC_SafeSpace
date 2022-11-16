@@ -11,18 +11,23 @@
   <div class="card-body p-2">
     <div class="row">
         <div class="card-content col flex-row flex-wrap justify-content-between">
+          {{!-- post youtube link if link aviable --}}
       {{#if post_links}}
 <iframe width="auto" src="https://www.youtube.com/embed/{{post_links}}" title="{{user.username}} uploaded video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      {{/if}}
+      {{/if}} 
+      {{!-- if no link leave blank --}}
+      {{!-- post image if link is aviable --}}
       {{#if post_image}}
         <img src="{{post_image}}" width="250" class="img-thumbnail" alt="{{user.username}} uploaded image"/>
       {{/if}}
+      {{!-- if no link leave blank --}}
       <p class="pl-2 pr-2 col">{{post_body}}
       </p>
       <div class="col button-options align-items-center">
         <button type="submit" id="downvote" class="btn-group btn btn-outline-light">
           {{votes}}
           </button>
+          {{!-- upvote btn --}}
         <form action="/upvotes" method="post">
         <button type="submit" name="post_id" value="{{id}}" class="btn-group btn-upvote-comment btn btn-outline-success">
           <i class="fa-solid fa-circle-arrow-up"></i></button>
