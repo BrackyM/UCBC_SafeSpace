@@ -5,7 +5,7 @@ const router = require("express").Router();
 router.get("/:username", async (req, res) => {
   let name = req.params;
   try {
-    //Get all posts
+    //Get all posts to include model:user
     const dbPostData = await Post.findAll({
       include: [
         {

@@ -38,6 +38,7 @@ Post.init(
             key: 'id'
         }
        },
+       // time stamp of post
        posted_time: {
         type: DataTypes.STRING,
         defaultValue: moment().format('MMMM Do YYYY, h:mm a'),
