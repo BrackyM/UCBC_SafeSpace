@@ -1,5 +1,5 @@
 const { User } = require('../models');
-
+// user template to test working code to draw value from
 const  testUser =  [
     {
        id: 1,
