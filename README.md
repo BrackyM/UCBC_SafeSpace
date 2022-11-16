@@ -41,6 +41,8 @@ We also used the following additions:
 * [Nodemon](https://www.npmjs.com/package//nodemon)
 * [Bootstrap](https://getbootstrap.com/docs/5.2/utilities/positi)
 * [Font Awesome](https://fontawesome.com/)
+* [Bootswatch](https://bootswatch.com/quartz/)
+* [get-video-id](https://www.npmjs.com/package/get-video-id)- new technology we used
 
 
 
