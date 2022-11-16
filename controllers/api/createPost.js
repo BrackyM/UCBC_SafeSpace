@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     user: req.session.body,
   });
 });
-// request and response for getting video link
+// request and response for getting video link using get-video-id 
 router.post("/", async (req, res) => {
   const link = getVideoId(req.body.createLink)
   console.log(req.session.body);
