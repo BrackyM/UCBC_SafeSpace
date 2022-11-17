@@ -115,7 +115,7 @@ We also used the following additions:
 # Deployed Project
 
 * [Repository](https://github.com/BrackyM/UCBC_SafeSpace)
-* [Live Site](https://github.com/BrackyM/UCBC_SafeSpace)
+* [Live Site](https://the-safer-space.herokuapp.com/)
 
  # Contributors
 
