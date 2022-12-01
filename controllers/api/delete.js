@@ -10,8 +10,12 @@ router.post("/", async (req, res) => {
       },
     });
 // logging up vote 
-   
-    await Post.deleteOne({ id: req.body.post_id})
+
+  await Post.destroy({
+    where: {
+      id: req.body.post_id,
+    },
+  });
     res.redirect('/')
     res.status(200)
   } catch (err) {
